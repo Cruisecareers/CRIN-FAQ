@@ -1,0 +1,881 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Recruitment FAQ</title>
+  <meta name="description" content="Everything you want to know regarding the application process on cruisecareers.in" />
+  <style>
+    :root{
+      --bg:#0b0f14; --text:#e5e7eb; --muted:#9ca3af; --accent:#60a5fa;
+      --border:rgba(255,255,255,.10); --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius:16px; --radius2:12px; --chip:#16233a; --chipOn:#1f3b67;
+      --focus: 0 0 0 3px rgba(96,165,250,.35); --max: 1100px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    *{box-sizing:border-box}
+    body{margin:0; font-family:var(--sans);
+      background: radial-gradient(1000px 500px at 10% 0%, rgba(96,165,250,.15), transparent 50%),
+                  radial-gradient(1000px 500px at 90% 20%, rgba(52,211,153,.12), transparent 55%),
+                  var(--bg);
+      color:var(--text); line-height:1.45;}
+    a{color:var(--accent); text-decoration:none} a:hover{text-decoration:underline}
+    .wrap{max-width:var(--max); margin:0 auto; padding:26px 16px 44px;}
+    header{display:flex; gap:14px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; margin-bottom:18px;}
+    .brand{display:flex; flex-direction:column; gap:6px; min-width:min(560px, 100%);}
+    h1{margin:0; font-size: clamp(22px, 3vw, 30px); letter-spacing:.2px;}
+    .sub{color:var(--muted); margin:0; font-size:14px;}
+
+    .controls{display:flex; gap:10px; align-items:center; flex-wrap:wrap; width:100%; margin: 14px 0 10px;}
+    .search{flex:1 1 320px; display:flex; gap:10px; align-items:center;
+      background: rgba(255,255,255,.04); border:1px solid var(--border); border-radius:999px;
+      padding: 10px 12px; box-shadow: var(--shadow);}
+    .search input{width:100%; background:transparent; border:0; outline:none; color:var(--text); font-size:14px;}
+    .search input::placeholder{color: rgba(229,231,235,.55)}
+    .kbd{font-family:var(--mono); color: rgba(229,231,235,.65); font-size:12px; border:1px solid var(--border);
+      padding:3px 8px; border-radius:999px; user-select:none;}
+    .btn{border:1px solid var(--border); background: rgba(255,255,255,.04); color:var(--text);
+      padding:10px 12px; border-radius:999px; cursor:pointer; font-size:13px;}
+    .btn:hover{background: rgba(255,255,255,.07)} .btn:focus{outline:none; box-shadow:var(--focus)}
+    .btn.primary{border-color: rgba(96,165,250,.45)} .btn.danger{border-color: rgba(248,113,113,.45)}
+
+    .chips{display:flex; gap:8px; flex-wrap:wrap; margin: 12px 0 16px;}
+    .chip{border:1px solid var(--border); background: var(--chip); color: var(--text); padding: 8px 10px;
+      border-radius: 999px; cursor:pointer; font-size: 13px; transition: transform .08s ease; user-select:none;}
+    .chip:hover{transform: translateY(-1px)}
+    .chip[aria-pressed="true"]{background: var(--chipOn); border-color: rgba(96,165,250,.35);}
+
+    .meta{display:flex; gap:10px; align-items:center; flex-wrap:wrap; color:var(--muted); font-size:13px; margin: 6px 0 18px;}
+    .pill{border:1px solid var(--border); padding:6px 10px; border-radius:999px; background: rgba(255,255,255,.03);}
+
+    .grid{display:grid; grid-template-columns:1fr; gap:12px;}
+    .card{background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      border: 1px solid var(--border); border-radius: var(--radius); overflow:hidden; box-shadow: var(--shadow);}
+    .cardHead{display:flex; justify-content:space-between; align-items:flex-start; gap:12px; padding: 14px 14px 10px; border-bottom: 1px solid rgba(255,255,255,.06);}
+    .cat{font-size: 12px; color: rgba(229,231,235,.70); background: rgba(96,165,250,.10);
+      border: 1px solid rgba(96,165,250,.25); padding: 4px 10px; border-radius:999px; white-space:nowrap; margin-top:2px;}
+    .cardTitle{margin:0; font-size:15px; line-height:1.35;}
+    .cardBody{padding: 0 14px 12px;}
+
+    details{padding: 12px 14px 12px;}
+    details + details{border-top: 1px solid rgba(255,255,255,.06)}
+    summary{list-style:none; cursor:pointer; display:flex; align-items:flex-start; gap:10px; padding: 10px 10px; border-radius: var(--radius2);}
+    summary::-webkit-details-marker{display:none}
+    summary:hover{background: rgba(255,255,255,.04)}
+    summary:focus{outline:none; box-shadow: var(--focus)}
+    .q{flex:1; font-weight:650; letter-spacing:.1px;}
+    .chev{width: 18px; height: 18px; margin-top: 2px; border: 2px solid rgba(229,231,235,.55);
+      border-left:0; border-top:0; transform: rotate(-45deg); transition: transform .15s ease; border-radius: 2px; opacity: .9;}
+    details[open] .chev{transform: rotate(45deg); margin-top: 6px;}
+    .a{margin: 10px 10px 4px; color: rgba(229,231,235,.90); font-size: 14px;}
+    .a ul{margin:8px 0 0 18px} .a li{margin: 6px 0}
+    .tools{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin: 8px 10px 2px; color: var(--muted); font-size: 12px;}
+    .tools a{color: rgba(229,231,235,.75); border: 1px solid rgba(255,255,255,.10); padding: 6px 10px; border-radius:999px; background: rgba(255,255,255,.03);}
+    .tools a:hover{color:var(--text); text-decoration:none; border-color: rgba(96,165,250,.30)}
+    .empty{padding: 18px 14px; color: var(--muted); background: rgba(255,255,255,.03); border: 1px dashed rgba(255,255,255,.15); border-radius: var(--radius);}
+    footer{margin-top: 18px; color: var(--muted); font-size: 13px; border-top: 1px solid rgba(255,255,255,.08); padding-top: 14px;}
+    .notice{margin-top: 10px; padding: 12px 14px; border-radius: var(--radius);
+      border: 1px solid rgba(96,165,250,.25); background: rgba(96,165,250,.08); color: rgba(229,231,235,.92);}
+    .notice strong{color: rgba(255,255,255,.95)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <h1>Recruitment FAQ</h1>
+        <p class="sub">Everything you want to know regarding the application process on Cruisecareers.in</p>
+      </div>
+    </header>
+
+    <div class="controls" role="search">
+      <div class="search" aria-label="Search FAQs">
+        <span aria-hidden="true">🔎</span>
+        <input id="searchInput" type="search" placeholder="Search… e.g., ‘Hot Jobs’, ‘EIF’, ‘PEME’, ‘US visa’, ‘STCW’, ‘Employee ID’" autocomplete="off" />
+        <span class="kbd" title="Keyboard shortcut">/</span>
+      </div>
+      <button class="btn primary" id="expandAllBtn" type="button">Expand all</button>
+      <button class="btn" id="collapseAllBtn" type="button">Collapse all</button>
+      <button class="btn danger" id="resetBtn" type="button">Reset</button>
+    </div>
+
+    <div class="meta" aria-live="polite">
+      <span class="pill"><span id="countShown">0</span> shown</span>
+      <span class="pill"><span id="countTotal">0</span> total</span>
+      <span class="pill">Tip: press <span class="kbd">/</span> to jump to search</span>
+    </div>
+
+    <div class="chips" id="chipBar" aria-label="Filter by category"></div>
+
+    <!-- Static view (always visible if scripts are blocked) -->
+    <main class="grid" id="faqRootStatic" aria-label="FAQ results (static)">
+<section class='card staticCard' data-cat='A) APPLICATION PROCESS'>
+<div class='cardHead'><div>
+<div class='cat'>A) APPLICATION PROCESS</div>
+<h2 class='cardTitle'>A) APPLICATION PROCESS</h2>
+</div></div>
+<div class='cardBody'>
+<details data-qid='a-application-process-how-do-i-apply-for-a-job-on-cruisecareers'>
+<summary tabindex='0'>
+<div class='q' id='a-application-process-how-do-i-apply-for-a-job-on-cruisecareers'>How do I apply for a job on CruiseCareers?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>How to Apply</p>
+<ul>
+<li>Step 1: Sign up at Cruisecareers.in with your email and password.</li>
+<li>Step 2: Confirm your email by clicking the verification link.</li>
+<li>Step 3: Complete your profile with passport, CV, and all required details.</li>
+<li>Step 4: Browse and apply for jobs once your profile is 100% complete.</li>
+</ul>
+</div>
+<div class='tools'>
+<a href='#a-application-process-how-do-i-apply-for-a-job-on-cruisecareers' title='Deep link'># Link</a>
+</div>
+</details>
+<details data-qid='a-application-process-how-to-find-a-job-suited-for-my-profile-and-experience'>
+<summary tabindex='0'>
+<div class='q' id='a-application-process-how-to-find-a-job-suited-for-my-profile-and-experience'>How to find a job suited for my profile and experience?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>All jobs with immediate requirements are listed under Hot Jobs.</p>
+<p style='margin:0 0 8px'>Select your desired position and apply. Details provided in Step 1.</p>
+</div>
+<div class='tools'>
+<a href='#a-application-process-how-to-find-a-job-suited-for-my-profile-and-experience' title='Deep link'># Link</a>
+</div>
+</details>
+<details data-qid='a-application-process-what-are-the-criteria-for-joining-a-cruise-line-age-qualifications-experience-etc'>
+<summary tabindex='0'>
+<div class='q' id='a-application-process-what-are-the-criteria-for-joining-a-cruise-line-age-qualifications-experience-etc'>What are the criteria for joining a Cruise Line? (Age, Qualifications, Experience, etc.)</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>Hiring Requirements:</p>
+<ul>
+<li>Age: Minimum 18–21 years (varies by brand)</li>
+<li>Education: Completed 10th grade / 10 years of schooling / SSC</li>
+<li>Experience: At least 12 months of work experience in the same position you&#x27;re applying for</li>
+</ul>
+</div>
+<div class='tools'>
+<a href='#a-application-process-what-are-the-criteria-for-joining-a-cruise-line-age-qualifications-experience-etc' title='Deep link'># Link</a>
+</div>
+</details>
+<details data-qid='a-application-process-i-have-applied-for-a-position-but-now-i-have-changed-my-mind-and-wish-to-apply-for-another'>
+<summary tabindex='0'>
+<div class='q' id='a-application-process-i-have-applied-for-a-position-but-now-i-have-changed-my-mind-and-wish-to-apply-for-another'>I have applied for a position but now I have changed my mind and wish to apply for another position. How can I do that? Can I apply for multiple jobs?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>No — you can only apply for one job on CruiseCareers.</p>
+<p style='margin:0 0 8px'>To apply for another position, you need to first withdraw your applied application:</p>
+<ul>
+<li>Log in to Cruisecareers.in</li>
+<li>Go to Applied Jobs</li>
+<li>Click Withdraw Application</li>
+</ul>
+</div>
+<div class='tools'>
+<a href='#a-application-process-i-have-applied-for-a-position-but-now-i-have-changed-my-mind-and-wish-to-apply-for-another' title='Deep link'># Link</a>
+</div>
+</details>
+<details data-qid='a-application-process-my-us-c1d-visa-was-rejected-when-i-first-applied-for-it-can-i-reapply-for-your-non-us-base'>
+<summary tabindex='0'>
+<div class='q' id='a-application-process-my-us-c1d-visa-was-rejected-when-i-first-applied-for-it-can-i-reapply-for-your-non-us-base'>My US C1D Visa was rejected when I first applied for it. Can I reapply for your non‑US based ships?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>Yes — you may apply.</p>
+<p style='margin:0 0 8px'>We&#x27;ll evaluate your profile for cruise brands operating outside US waters that don&#x27;t require US visas.</p>
+<p style='margin:0 0 8px'>However, please be patient for positions to open up.</p>
+</div>
+<div class='tools'>
+<a href='#a-application-process-my-us-c1d-visa-was-rejected-when-i-first-applied-for-it-can-i-reapply-for-your-non-us-base' title='Deep link'># Link</a>
+</div>
+</details>
+<details data-qid='a-application-process-i-am-unable-to-apply-for-jobs-on-the-website-cooling-off-period-apply-button-not-working-e'>
+<summary tabindex='0'>
+<div class='q' id='a-application-process-i-am-unable-to-apply-for-jobs-on-the-website-cooling-off-period-apply-button-not-working-e'>I am unable to apply for jobs on the website (cooling‑off period / apply button not working / errors).</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>For application problems (errors, cooling‑off periods, non-working apply buttons, loading issues, or missing options), try these steps:</p>
+<ul>
+<li>Clear your browser cache and cookies</li>
+<li>Try a different browser or device</li>
+<li>Check your internet connection</li>
+<li>Log out and log back in</li>
+</ul>
+<p style='margin:0 0 8px'>Cooling‑off period: If your previous job application was declined, you will need to serve a cooling‑off period before you&#x27;re eligible to reapply. You will see this information on your screen when you reapply.</p>
+<p style='margin:0 0 8px'>Apply button not working: This occurs when the position is closed and we’re no longer accepting applications — please check Hot Jobs for current openings.</p>
+</div>
+<div class='tools'>
+<a href='#a-application-process-i-am-unable-to-apply-for-jobs-on-the-website-cooling-off-period-apply-button-not-working-e' title='Deep link'># Link</a>
+</div>
+</details>
+<details data-qid='a-application-process-i-want-to-apply-for-a-role-not-listed-under-hot-jobs-what-should-i-do'>
+<summary tabindex='0'>
+<div class='q' id='a-application-process-i-want-to-apply-for-a-role-not-listed-under-hot-jobs-what-should-i-do'>I want to apply for a role not listed under “Hot Jobs.” What should I do?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>If your desired role isn&#x27;t listed, it&#x27;s currently unavailable.</p>
+<p style='margin:0 0 8px'>Go to Find Jobs, select the position, and click Notify Me to receive an email alert when it opens.</p>
+</div>
+<div class='tools'>
+<a href='#a-application-process-i-want-to-apply-for-a-role-not-listed-under-hot-jobs-what-should-i-do' title='Deep link'># Link</a>
+</div>
+</details>
+<details data-qid='a-application-process-i-am-already-working-for-a-brand-managed-by-cssi-but-i-need-to-change-my-brand-is-that-pos'>
+<summary tabindex='0'>
+<div class='q' id='a-application-process-i-am-already-working-for-a-brand-managed-by-cssi-but-i-need-to-change-my-brand-is-that-pos'>I am already working for a brand managed by CSSI but I need to change my brand. Is that possible and if yes how?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>In most cases, if you wish to change your brand, you will first need to resign, serve a cooling‑off period, and then go through the entire recruitment process again (including interviews/assessments).</p>
+<p style='margin:0 0 8px'>Additionally, we will need to obtain HR clearance from your previous employer.</p>
+</div>
+<div class='tools'>
+<a href='#a-application-process-i-am-already-working-for-a-brand-managed-by-cssi-but-i-need-to-change-my-brand-is-that-pos' title='Deep link'># Link</a>
+</div>
+</details>
+<details data-qid='a-application-process-how-when-to-fill-in-the-eif-form'>
+<summary tabindex='0'>
+<div class='q' id='a-application-process-how-when-to-fill-in-the-eif-form'>How/When to fill in the EIF form?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>You can fill in the EIF (Employment Information Form) after you have been selected and you have e‑signed your Offer Letter.</p>
+<p style='margin:0 0 8px'>You will receive an EIF notification on your screen as soon as you log in to CruiseCareers. Follow the instructions to complete the EIF.</p>
+</div>
+<div class='tools'>
+<a href='#a-application-process-how-when-to-fill-in-the-eif-form' title='Deep link'># Link</a>
+</div>
+</details>
+<details data-qid='a-application-process-i-received-an-offer-letter-but-was-not-part-of-any-interview-with-carnival-brands-or-cssi-'>
+<summary tabindex='0'>
+<div class='q' id='a-application-process-i-received-an-offer-letter-but-was-not-part-of-any-interview-with-carnival-brands-or-cssi-'>I received an Offer letter but was not part of any interview with Carnival brands or CSSI. Is this legitimate?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>Most likely this will be a fake job offer letter.</p>
+<p style='margin:0 0 8px'>If you are unsure about the authenticity of an offer letter, use this link and submit your details. Our team will respond within 48 hours.</p>
+</div>
+<div class='tools'>
+<a href='#a-application-process-i-received-an-offer-letter-but-was-not-part-of-any-interview-with-carnival-brands-or-cssi-' title='Deep link'># Link</a>
+<a href='https://bit.ly/stopjobscam' target='_blank' rel='noopener noreferrer'>Report / verify suspected job scam</a>
+</div>
+</details>
+<details data-qid='a-application-process-my-application-status-shows-shortlisted-but-i-haven-t-received-any-response-what-does-this'>
+<summary tabindex='0'>
+<div class='q' id='a-application-process-my-application-status-shows-shortlisted-but-i-haven-t-received-any-response-what-does-this'>My application status shows “Shortlisted,” but I haven’t received any response. What does this mean?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>This could mean that we presently do not have any vacancies for this position and have placed you in our Talent Pool.</p>
+<p style='margin:0 0 8px'>As soon as a position is available, we will get in touch with you.</p>
+<p style='margin:0 0 8px'>Alternatively, it could mean we were unable to contact you for an interview date. Please ensure your contact details in your profile are current and updated.</p>
+</div>
+<div class='tools'>
+<a href='#a-application-process-my-application-status-shows-shortlisted-but-i-haven-t-received-any-response-what-does-this' title='Deep link'># Link</a>
+</div>
+</details>
+<details data-qid='a-application-process-can-i-drop-in-for-a-walk-in-interview-at-cssi'>
+<summary tabindex='0'>
+<div class='q' id='a-application-process-can-i-drop-in-for-a-walk-in-interview-at-cssi'>Can I drop in for a Walk‑in Interview at CSSI?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>At present all our interviews are by appointment only. There are no walk‑in interviews being conducted.</p>
+<p style='margin:0 0 8px'>If you have applied for a position, complete the assigned assessments and ensure that your profile is at least 80% complete.</p>
+<p style='margin:0 0 8px'>Our team will review your application, and if found suitable, you will be invited to our office for an interview.</p>
+</div>
+<div class='tools'>
+<a href='#a-application-process-can-i-drop-in-for-a-walk-in-interview-at-cssi' title='Deep link'># Link</a>
+</div>
+</details>
+<details data-qid='a-application-process-i-could-not-turn-up-for-an-interview-on-the-assigned-date-and-time-can-i-reschedule'>
+<summary tabindex='0'>
+<div class='q' id='a-application-process-i-could-not-turn-up-for-an-interview-on-the-assigned-date-and-time-can-i-reschedule'>I could not turn up for an interview on the assigned date and time. Can I reschedule?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>If possible, we will reschedule your interview for the next available date.</p>
+<p style='margin:0 0 8px'>However, we request you to let us know beforehand if you are unable to make it for the interview.</p>
+</div>
+<div class='tools'>
+<a href='#a-application-process-i-could-not-turn-up-for-an-interview-on-the-assigned-date-and-time-can-i-reschedule' title='Deep link'># Link</a>
+</div>
+</details>
+<details data-qid='a-application-process-i-received-an-sms-regarding-my-shortlisting-for-a-job-but-i-have-still-not-received-any-ma'>
+<summary tabindex='0'>
+<div class='q' id='a-application-process-i-received-an-sms-regarding-my-shortlisting-for-a-job-but-i-have-still-not-received-any-ma'>I received an SMS regarding my shortlisting for a job, but I have still not received any mail as mentioned in the message.</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>Check your email spam / junk folder for any communication.</p>
+</div>
+<div class='tools'>
+<a href='#a-application-process-i-received-an-sms-regarding-my-shortlisting-for-a-job-but-i-have-still-not-received-any-ma' title='Deep link'># Link</a>
+</div>
+</details>
+<details data-qid='a-application-process-what-are-the-stages-from-recruitment-to-the-onboarding-process'>
+<summary tabindex='0'>
+<div class='q' id='a-application-process-what-are-the-stages-from-recruitment-to-the-onboarding-process'>What are the stages from recruitment to the onboarding process?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>Once you are selected for an onboard position, you will receive an Offer Letter via Cruisecareers.in that you will need to e‑sign within 48 hours. Steps to complete:</p>
+<ul>
+<li>Log in to Cruisecareers.in and navigate to My Tasks.</li>
+<li>Open and e‑sign your Offer Letter and Job Description.</li>
+<li>Complete and submit the EIF Form.</li>
+<li>Continue monitoring My Tasks for further instructions.</li>
+</ul>
+<p style='margin:0 0 8px'>After submitting the EIF, your employee number will be generated. You must then complete PEME, background verification, employer reference check, STCW 2010 courses, Indian CDC, SID, and Visa, as outlined in your Conditional Offer Letter within the prescribed time frame.</p>
+<p style='margin:0 0 8px'>Upon completion of all required formalities, you will be contacted by our Onboarding team once a joining date has been identified for you.</p>
+</div>
+<div class='tools'>
+<a href='#a-application-process-what-are-the-stages-from-recruitment-to-the-onboarding-process' title='Deep link'># Link</a>
+</div>
+</details>
+<details data-qid='a-application-process-i-applied-for-a-position-and-my-profile-is-also-more-than-80-complete-but-i-haven-t-receiv'>
+<summary tabindex='0'>
+<div class='q' id='a-application-process-i-applied-for-a-position-and-my-profile-is-also-more-than-80-complete-but-i-haven-t-receiv'>I applied for a position, and my profile is also more than 80% complete. But I haven’t received any message regarding my application.</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>Our recruiters will contact you when vacancies match your profile.</p>
+<p style='margin:0 0 8px'>If shortlisted, you will receive an email invitation for a personal interview.</p>
+</div>
+<div class='tools'>
+<a href='#a-application-process-i-applied-for-a-position-and-my-profile-is-also-more-than-80-complete-but-i-haven-t-receiv' title='Deep link'># Link</a>
+</div>
+</details>
+<details data-qid='a-application-process-i-have-signed-the-offer-letter-job-description-and-completed-the-eif-what-happens-next'>
+<summary tabindex='0'>
+<div class='q' id='a-application-process-i-have-signed-the-offer-letter-job-description-and-completed-the-eif-what-happens-next'>I have signed the Offer letter, Job description, and completed the EIF. What happens next?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>The CSSI team will generate your employee ID within 7 days. Next steps include:</p>
+<ul>
+<li>Completing background and employer reference checks via our third‑party verification agency called ATTESTR (respond promptly to their emails).</li>
+<li>Completing your medical assessment within 7 days using the PEME link in your offer letter.</li>
+<li>Enrolling in STCW 2010 courses if not already done. Use only DG Shipping certified Marine Training Institutes.</li>
+<li>Monitoring My Tasks on your Dashboard for new assignments.</li>
+</ul>
+</div>
+<div class='tools'>
+<a href='#a-application-process-i-have-signed-the-offer-letter-job-description-and-completed-the-eif-what-happens-next' title='Deep link'># Link</a>
+<a href='https://bit.ly/DGMTI' target='_blank' rel='noopener noreferrer'>DG Shipping certified MTIs</a>
+</div>
+</details>
+<details data-qid='a-application-process-what-does-pending-brand-approval-mean-in-my-application-status'>
+<summary tabindex='0'>
+<div class='q' id='a-application-process-what-does-pending-brand-approval-mean-in-my-application-status'>What does “Pending Brand Approval” mean in my application status?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>This means your application is still under review or has been forwarded to operations for further interviews or assessment.</p>
+<p style='margin:0 0 8px'>Please keep checking your email and dashboard for updates.</p>
+</div>
+<div class='tools'>
+<a href='#a-application-process-what-does-pending-brand-approval-mean-in-my-application-status' title='Deep link'># Link</a>
+</div>
+</details>
+<details data-qid='a-application-process-i-am-unable-to-perform-my-self-assessment-not-received-page-not-responding-unable-to-scrol'>
+<summary tabindex='0'>
+<div class='q' id='a-application-process-i-am-unable-to-perform-my-self-assessment-not-received-page-not-responding-unable-to-scrol'>I am unable to perform my self‑assessment (not received / page not responding / unable to scroll down).</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>If you have not received the assessments, it could mean that there are no assessments ready for the position you have applied for. No action is required currently.</p>
+<p style='margin:0 0 8px'>Additionally, close all browser windows, clear cache and cookies, then re‑login.</p>
+</div>
+<div class='tools'>
+<a href='#a-application-process-i-am-unable-to-perform-my-self-assessment-not-received-page-not-responding-unable-to-scrol' title='Deep link'># Link</a>
+</div>
+</details>
+<details data-qid='a-application-process-i-have-not-received-any-mail-regarding-my-english-language-test-how-where-can-i-find-the-s'>
+<summary tabindex='0'>
+<div class='q' id='a-application-process-i-have-not-received-any-mail-regarding-my-english-language-test-how-where-can-i-find-the-s'>I have not received any mail regarding my English Language test. How/Where can I find the same?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>Check your email spam / junk folder for any communication.</p>
+</div>
+<div class='tools'>
+<a href='#a-application-process-i-have-not-received-any-mail-regarding-my-english-language-test-how-where-can-i-find-the-s' title='Deep link'># Link</a>
+</div>
+</details>
+<details data-qid='a-application-process-i-cannot-upload-my-passport-copy-it-shows-a-duplicate-passport-copy-error-what-does-this-m'>
+<summary tabindex='0'>
+<div class='q' id='a-application-process-i-cannot-upload-my-passport-copy-it-shows-a-duplicate-passport-copy-error-what-does-this-m'>I cannot upload my passport copy; it shows a duplicate passport copy error. What does this mean?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>This means that you have already registered for an account previously with the same passport.</p>
+<p style='margin:0 0 8px'>If you have forgotten your password, reset it using the Forgot Password option on the homepage.</p>
+</div>
+<div class='tools'>
+<a href='#a-application-process-i-cannot-upload-my-passport-copy-it-shows-a-duplicate-passport-copy-error-what-does-this-m' title='Deep link'># Link</a>
+</div>
+</details>
+<details data-qid='a-application-process-i-have-login-issues-forgot-my-username-and-password-change-my-email-id-and-phone-number-as'>
+<summary tabindex='0'>
+<div class='q' id='a-application-process-i-have-login-issues-forgot-my-username-and-password-change-my-email-id-and-phone-number-as'>I have login issues — Forgot my Username &amp; Password / Change my Email ID &amp; Phone number associated with my account.</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>If you’ve forgotten your password, go to Cruisecareers.in and click on Forgot Password to reset it.</p>
+<p style='margin:0 0 8px'>To update your contact details, log in to Cruisecareers.in, go to your dashboard, click on My Profile, and update your contact information.</p>
+</div>
+<div class='tools'>
+<a href='#a-application-process-i-have-login-issues-forgot-my-username-and-password-change-my-email-id-and-phone-number-as' title='Deep link'># Link</a>
+</div>
+</details>
+<details data-qid='a-application-process-i-am-unable-to-complete-100-of-my-profile-information-on-cruisecareers'>
+<summary tabindex='0'>
+<div class='q' id='a-application-process-i-am-unable-to-complete-100-of-my-profile-information-on-cruisecareers'>I am unable to complete 100% of my profile information on CruiseCareers.</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>To ensure 100% completion of your profile, ensure all required fields are filled and all mandatory documents are uploaded.</p>
+</div>
+<div class='tools'>
+<a href='#a-application-process-i-am-unable-to-complete-100-of-my-profile-information-on-cruisecareers' title='Deep link'># Link</a>
+</div>
+</details>
+<details data-qid='a-application-process-when-how-can-i-get-my-employee-id'>
+<summary tabindex='0'>
+<div class='q' id='a-application-process-when-how-can-i-get-my-employee-id'>When/How can I get my Employee ID?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>Your employee ID will be generated after completing the EIF form and e‑signing both your offer letter and job description.</p>
+<p style='margin:0 0 8px'>Once generated, this employee ID will be emailed to you and will also be visible in your Cruisecareers.in profile.</p>
+</div>
+<div class='tools'>
+<a href='#a-application-process-when-how-can-i-get-my-employee-id' title='Deep link'># Link</a>
+</div>
+</details>
+</div></section>
+<section class='card staticCard' data-cat='B) CHARGES &amp; FEES'>
+<div class='cardHead'><div>
+<div class='cat'>B) CHARGES &amp; FEES</div>
+<h2 class='cardTitle'>B) CHARGES &amp; FEES</h2>
+</div></div>
+<div class='cardBody'>
+<details data-qid='b-charges-and-fees-are-there-any-charges-to-apply-for-a-job-or-recruitment-process-with-cssi'>
+<summary tabindex='0'>
+<div class='q' id='b-charges-and-fees-are-there-any-charges-to-apply-for-a-job-or-recruitment-process-with-cssi'>Are there any charges to apply for a job or recruitment process with CSSI?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>All CSSI recruitment services are completely free of charge.</p>
+<p style='margin:0 0 8px'>There are no charges at any stage of the recruitment process.</p>
+</div>
+<div class='tools'>
+<a href='#b-charges-and-fees-are-there-any-charges-to-apply-for-a-job-or-recruitment-process-with-cssi' title='Deep link'># Link</a>
+</div>
+</details>
+</div></section>
+<section class='card staticCard' data-cat='C) JOINING A SHIP'>
+<div class='cardHead'><div>
+<div class='cat'>C) JOINING A SHIP</div>
+<h2 class='cardTitle'>C) JOINING A SHIP</h2>
+</div></div>
+<div class='cardBody'>
+<details data-qid='c-joining-a-ship-i-have-an-issue-regarding-my-flight-tickets-not-received-cancelled-etc'>
+<summary tabindex='0'>
+<div class='q' id='c-joining-a-ship-i-have-an-issue-regarding-my-flight-tickets-not-received-cancelled-etc'>I have an issue regarding my flight tickets (not received / cancelled etc).</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>Please email your brand Logistics Coordinator / Compliance Team (specific to your selected brand/company) with your query.</p>
+<p style='margin:0 0 8px'>Don’t forget to mention your name, Emp ID, name of ship and joining date.</p>
+</div>
+<div class='tools'>
+<a href='#c-joining-a-ship-i-have-an-issue-regarding-my-flight-tickets-not-received-cancelled-etc' title='Deep link'># Link</a>
+</div>
+</details>
+<details data-qid='c-joining-a-ship-can-i-reschedule-cancel-postpone-bring-forward-my-joining-date'>
+<summary tabindex='0'>
+<div class='q' id='c-joining-a-ship-can-i-reschedule-cancel-postpone-bring-forward-my-joining-date'>Can I reschedule / cancel / postpone / bring forward my joining date?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>This is highly unlikely.</p>
+<p style='margin:0 0 8px'>Requests for postponement depend upon the reason.</p>
+<p style='margin:0 0 8px'>Please email your brand Logistics Coordinator / Compliance Team with your query, the reason, and any supporting documentation.</p>
+</div>
+<div class='tools'>
+<a href='#c-joining-a-ship-can-i-reschedule-cancel-postpone-bring-forward-my-joining-date' title='Deep link'># Link</a>
+</div>
+</details>
+<details data-qid='c-joining-a-ship-my-ship-joining-date-got-cancelled-due-to-operational-reasons-what-next'>
+<summary tabindex='0'>
+<div class='q' id='c-joining-a-ship-my-ship-joining-date-got-cancelled-due-to-operational-reasons-what-next'>My ship joining date got cancelled due to operational reasons. What next?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>If your joining date has been cancelled, our onboarding team will contact you with further details as and when available.</p>
+</div>
+<div class='tools'>
+<a href='#c-joining-a-ship-my-ship-joining-date-got-cancelled-due-to-operational-reasons-what-next' title='Deep link'># Link</a>
+</div>
+</details>
+<details data-qid='c-joining-a-ship-what-is-career-progression-or-promotion-policy-can-i-apply-for-a-promotion'>
+<summary tabindex='0'>
+<div class='q' id='c-joining-a-ship-what-is-career-progression-or-promotion-policy-can-i-apply-for-a-promotion'>What is career progression or promotion policy? Can I apply for a promotion?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>Promotions are solely based on onboard performance appraisal.</p>
+<p style='margin:0 0 8px'>These are handled by the shoreside operations department overseas (not CSSI).</p>
+<p style='margin:0 0 8px'>You cannot ‘apply’ for a promotion — your performance in your contract should speak for itself.</p>
+</div>
+<div class='tools'>
+<a href='#c-joining-a-ship-what-is-career-progression-or-promotion-policy-can-i-apply-for-a-promotion' title='Deep link'># Link</a>
+</div>
+</details>
+<details data-qid='c-joining-a-ship-i-have-a-joining-date-when-will-i-get-all-my-joining-documents-like-contract-and-flight-ti'>
+<summary tabindex='0'>
+<div class='q' id='c-joining-a-ship-i-have-a-joining-date-when-will-i-get-all-my-joining-documents-like-contract-and-flight-ti'>I have a joining date. When will I get all my joining documents like contract and flight tickets?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>You will receive your contract (Seafarers Employment Agreement) up to 30 days in advance — you should sign and send it back within 3 days.</p>
+<p style='margin:0 0 8px'>All other documents such as your flight tickets etc. will follow.</p>
+</div>
+<div class='tools'>
+<a href='#c-joining-a-ship-i-have-a-joining-date-when-will-i-get-all-my-joining-documents-like-contract-and-flight-ti' title='Deep link'># Link</a>
+</div>
+</details>
+<details data-qid='c-joining-a-ship-i-have-all-documents-ready-and-am-waiting-for-my-joining-date-what-should-i-do'>
+<summary tabindex='0'>
+<div class='q' id='c-joining-a-ship-i-have-all-documents-ready-and-am-waiting-for-my-joining-date-what-should-i-do'>I have all documents ready and am waiting for my joining date. What should I do?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>We encourage you to continue to work with your current organization till you hear from the onboarding team about your confirmed joining date.</p>
+</div>
+<div class='tools'>
+<a href='#c-joining-a-ship-i-have-all-documents-ready-and-am-waiting-for-my-joining-date-what-should-i-do' title='Deep link'># Link</a>
+</div>
+</details>
+</div></section>
+<section class='card staticCard' data-cat='D) REHIRE PROCESS'>
+<div class='cardHead'><div>
+<div class='cat'>D) REHIRE PROCESS</div>
+<h2 class='cardTitle'>D) REHIRE PROCESS</h2>
+</div></div>
+<div class='cardBody'>
+<details data-qid='d-rehire-process-i-was-previously-employed-onboard-a-carnival-brand-ship-i-now-wish-to-rejoin-what-document'>
+<summary tabindex='0'>
+<div class='q' id='d-rehire-process-i-was-previously-employed-onboard-a-carnival-brand-ship-i-now-wish-to-rejoin-what-document'>I was previously employed onboard a Carnival brand ship. I now wish to rejoin. What documents are needed for the rehire?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>If you were previously employed with a Carnival brand and wish to rejoin after a career break, click the link and fill in your details.</p>
+<p style='margin:0 0 8px'>Our Employee Relations team will check your details and reply.</p>
+<p style='margin:0 0 8px'>Please note you cannot apply for rehire if your exit from the company was on disciplinary grounds or breaking contract.</p>
+</div>
+<div class='tools'>
+<a href='#d-rehire-process-i-was-previously-employed-onboard-a-carnival-brand-ship-i-now-wish-to-rejoin-what-document' title='Deep link'># Link</a>
+<a href='https://bit.ly/ersupport' target='_blank' rel='noopener noreferrer'>Rehire support</a>
+</div>
+</details>
+</div></section>
+<section class='card staticCard' data-cat='E) PRE‑EMPLOYMENT MEDICAL TEST (PEME)'>
+<div class='cardHead'><div>
+<div class='cat'>E) PRE‑EMPLOYMENT MEDICAL TEST (PEME)</div>
+<h2 class='cardTitle'>E) PRE‑EMPLOYMENT MEDICAL TEST (PEME)</h2>
+</div></div>
+<div class='cardBody'>
+<details data-qid='e-pre-employment-medical-test-peme-i-was-unable-to-complete-my-pre-employment-medical-examination-peme-within-the-prescribed-'>
+<summary tabindex='0'>
+<div class='q' id='e-pre-employment-medical-test-peme-i-was-unable-to-complete-my-pre-employment-medical-examination-peme-within-the-prescribed-'>I was unable to complete my Pre‑Employment Medical Examination (PEME) within the prescribed time period. How can I reschedule it?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>If you wish to reschedule your PEME appointment, please speak to our Medical Team on 079425 29292 and select Medical from the IVR Menu.</p>
+</div>
+<div class='tools'>
+<a href='#e-pre-employment-medical-test-peme-i-was-unable-to-complete-my-pre-employment-medical-examination-peme-within-the-prescribed-' title='Deep link'># Link</a>
+<a href='tel:+917942529292'>Call Medical Team</a>
+</div>
+</details>
+<details data-qid='e-pre-employment-medical-test-peme-where-can-i-find-peme-centers'>
+<summary tabindex='0'>
+<div class='q' id='e-pre-employment-medical-test-peme-where-can-i-find-peme-centers'>Where can I find PEME centers?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>Medical centers are listed via a link in your offer letter.</p>
+<p style='margin:0 0 8px'>You can complete your PEME at a center closest to your residence.</p>
+</div>
+<div class='tools'>
+<a href='#e-pre-employment-medical-test-peme-where-can-i-find-peme-centers' title='Deep link'># Link</a>
+</div>
+</details>
+</div></section>
+<section class='card staticCard' data-cat='F) TRAINING'>
+<div class='cardHead'><div>
+<div class='cat'>F) TRAINING</div>
+<h2 class='cardTitle'>F) TRAINING</h2>
+</div></div>
+<div class='cardBody'>
+<details data-qid='f-training-i-have-been-selected-for-costa-cruises-when-will-my-training-at-the-culinary-academy-of-in'>
+<summary tabindex='0'>
+<div class='q' id='f-training-i-have-been-selected-for-costa-cruises-when-will-my-training-at-the-culinary-academy-of-in'>I have been selected for Costa Cruises. When will my training at the Culinary Academy of India (CAI) Hyderabad begin? Where and how can I find the details?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>You will receive an email from our training coordinator if your brand/rank requires this training.</p>
+</div>
+<div class='tools'>
+<a href='#f-training-i-have-been-selected-for-costa-cruises-when-will-my-training-at-the-culinary-academy-of-in' title='Deep link'># Link</a>
+</div>
+</details>
+<details data-qid='f-training-are-stcw-courses-compulsory'>
+<summary tabindex='0'>
+<div class='q' id='f-training-are-stcw-courses-compulsory'>Are STCW courses compulsory?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>Yes. Basic STCW courses, also called Basic Safety Training (BST), are compulsory for all cruise ship crew for all brands.</p>
+<p style='margin:0 0 8px'>The below basic STCW courses should be completed at a DG Shipping recognized institute:</p>
+<ul>
+<li>Personal Survival Techniques (PST)</li>
+<li>Fire Prevention &amp; Fire Fighting (FPFF)</li>
+<li>Elementary First Aid (EFA)</li>
+<li>Personal Safety &amp; Social Responsibilities (PSSR)</li>
+</ul>
+<p style='margin:0 0 8px'>If applicable (depending on the brand), these courses may also be required:</p>
+<ul>
+<li>Designated Security Duties (DSD)</li>
+<li>Passenger Ship Familiarization (PSF)</li>
+</ul>
+<p style='margin:0 0 8px'>Please note: the costs of these courses will be borne by you and are not reimbursed.</p>
+</div>
+<div class='tools'>
+<a href='#f-training-are-stcw-courses-compulsory' title='Deep link'># Link</a>
+</div>
+</details>
+</div></section>
+<section class='card staticCard' data-cat='G) VISA PROCESS'>
+<div class='cardHead'><div>
+<div class='cat'>G) VISA PROCESS</div>
+<h2 class='cardTitle'>G) VISA PROCESS</h2>
+</div></div>
+<div class='cardBody'>
+<details data-qid='g-visa-process-how-do-i-know-which-visa-to-apply-for-and-when'>
+<summary tabindex='0'>
+<div class='q' id='g-visa-process-how-do-i-know-which-visa-to-apply-for-and-when'>How do I know which visa to apply for and when?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>Once you receive your employee ID, the CSSI Visa team will contact you and provide information on how you can apply for a visa with detailed user guides.</p>
+</div>
+<div class='tools'>
+<a href='#g-visa-process-how-do-i-know-which-visa-to-apply-for-and-when' title='Deep link'># Link</a>
+</div>
+</details>
+<details data-qid='g-visa-process-is-us-visa-compulsory-to-join'>
+<summary tabindex='0'>
+<div class='q' id='g-visa-process-is-us-visa-compulsory-to-join'>Is US Visa compulsory to join?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>Yes. A valid US C1D visa is required to join our ships based in North America such as Princess Cruises, Holland America Line, Seabourn and Cunard Line.</p>
+<p style='margin:0 0 8px'>Depending upon the itinerary, a US C1D visa may also be required to join a P&amp;O Cruises ship.</p>
+<p style='margin:0 0 8px'>If you fail to obtain a US C1D visa for any reason, your candidature will be cancelled.</p>
+<p style='margin:0 0 8px'>Regretfully, we can provide you with only one chance to apply for a US C1/D visa.</p>
+</div>
+<div class='tools'>
+<a href='#g-visa-process-is-us-visa-compulsory-to-join' title='Deep link'># Link</a>
+</div>
+</details>
+</div></section>
+<section class='card staticCard' data-cat='H) CSSI CONTACT DETAILS'>
+<div class='cardHead'><div>
+<div class='cat'>H) CSSI CONTACT DETAILS</div>
+<h2 class='cardTitle'>H) CSSI CONTACT DETAILS</h2>
+</div></div>
+<div class='cardBody'>
+<details data-qid='h-cssi-contact-details-how-can-i-contact-cssi-for-recruitment-or-application-queries'>
+<summary tabindex='0'>
+<div class='q' id='h-cssi-contact-details-how-can-i-contact-cssi-for-recruitment-or-application-queries'>How can I contact CSSI for recruitment or application queries?</div>
+<div class='chev' aria-hidden='true'></div></summary>
+<div class='a'>
+<p style='margin:0 0 8px'>Have queries related to recruitment or the application process? Join our webinar held Monday to Friday (working days only) from 3:30pm to 4:30pm and speak to our recruitment experts directly.</p>
+<ul>
+<li>Click to join: https://bit.ly/CRINwebinar</li>
+<li>Mobile joining guide: https://bit.ly/WebinarGeneric</li>
+</ul>
+<p style='margin:0 0 8px'>Carnival Support Services India Pvt. Ltd, Kohinoor City, Tower 2, Floor 5, Kirol Road, Off LBS Marg, Kurla West, Mumbai 400070.</p>
+<p style='margin:0 0 8px'>Open: Mon–Fri, 09:30am to 05:30pm</p>
+<p style='margin:0 0 8px'>Website: www.cruisecareers.in</p>
+<p style='margin:0 0 8px'>Email: hellocssi@carnivalssi.com</p>
+</div>
+<div class='tools'>
+<a href='#h-cssi-contact-details-how-can-i-contact-cssi-for-recruitment-or-application-queries' title='Deep link'># Link</a>
+<a href='https://bit.ly/CRINwebinar' target='_blank' rel='noopener noreferrer'>Join webinar</a>
+<a href='https://bit.ly/WebinarGeneric' target='_blank' rel='noopener noreferrer'>Webinar mobile guide</a>
+<a href='https://www.cruisecareers.in' target='_blank' rel='noopener noreferrer'>CruiseCareers website</a>
+<a href='mailto:hellocssi@carnivalssi.com'>Email CSSI</a>
+</div>
+</details>
+</div></section>
+    </main>
+
+    <!-- Enhanced view -->
+    <main class="grid" id="faqRoot" aria-label="FAQ results (enhanced)" style="display:none"></main>
+
+    <footer>
+      <div class="notice">
+        <strong>Reminder:</strong> CSSI recruitment services are free of charge. There are no charges at any stage of the recruitment process.
+      </div>
+      <p style="margin:12px 0 0"><span class="muted">Job scam reporting:</span>
+        <a href="https://bit.ly/stopjobscam" target="_blank" rel="noopener noreferrer">https://bit.ly/stopjobscam</a></p>
+      <p style="margin:8px 0 0"><span class="muted">Rehire support:</span>
+        <a href="https://bit.ly/ersupport" target="_blank" rel="noopener noreferrer">https://bit.ly/ersupport</a></p>
+      <p style="margin:8px 0 0"><span class="muted">Contact:</span>
+        <a href="mailto:hellocssi@carnivalssi.com">hellocssi@carnivalssi.com</a></p>
+    </footer>
+  </div>
+
+<script>
+  const FAQS = [{"category": "A) APPLICATION PROCESS", "q": "How do I apply for a job on CruiseCareers?", "a": ["How to Apply", ["Step 1: Sign up at Cruisecareers.in with your email and password.", "Step 2: Confirm your email by clicking the verification link.", "Step 3: Complete your profile with passport, CV, and all required details.", "Step 4: Browse and apply for jobs once your profile is 100% complete."]], "links": []}, {"category": "A) APPLICATION PROCESS", "q": "How to find a job suited for my profile and experience?", "a": ["All jobs with immediate requirements are listed under Hot Jobs.", "Select your desired position and apply. Details provided in Step 1."], "links": []}, {"category": "A) APPLICATION PROCESS", "q": "What are the criteria for joining a Cruise Line? (Age, Qualifications, Experience, etc.)", "a": ["Hiring Requirements:", ["Age: Minimum 18–21 years (varies by brand)", "Education: Completed 10th grade / 10 years of schooling / SSC", "Experience: At least 12 months of work experience in the same position you're applying for"]], "links": []}, {"category": "A) APPLICATION PROCESS", "q": "I have applied for a position but now I have changed my mind and wish to apply for another position. How can I do that? Can I apply for multiple jobs?", "a": ["No — you can only apply for one job on CruiseCareers.", "To apply for another position, you need to first withdraw your applied application:", ["Log in to Cruisecareers.in", "Go to Applied Jobs", "Click Withdraw Application"]], "links": []}, {"category": "A) APPLICATION PROCESS", "q": "My US C1D Visa was rejected when I first applied for it. Can I reapply for your non‑US based ships?", "a": ["Yes — you may apply.", "We'll evaluate your profile for cruise brands operating outside US waters that don't require US visas.", "However, please be patient for positions to open up."], "links": []}, {"category": "A) APPLICATION PROCESS", "q": "I am unable to apply for jobs on the website (cooling‑off period / apply button not working / errors).", "a": ["For application problems (errors, cooling‑off periods, non-working apply buttons, loading issues, or missing options), try these steps:", ["Clear your browser cache and cookies", "Try a different browser or device", "Check your internet connection", "Log out and log back in"], "Cooling‑off period: If your previous job application was declined, you will need to serve a cooling‑off period before you're eligible to reapply. You will see this information on your screen when you reapply.", "Apply button not working: This occurs when the position is closed and we’re no longer accepting applications — please check Hot Jobs for current openings."], "links": []}, {"category": "A) APPLICATION PROCESS", "q": "I want to apply for a role not listed under “Hot Jobs.” What should I do?", "a": ["If your desired role isn't listed, it's currently unavailable.", "Go to Find Jobs, select the position, and click Notify Me to receive an email alert when it opens."], "links": []}, {"category": "A) APPLICATION PROCESS", "q": "I am already working for a brand managed by CSSI but I need to change my brand. Is that possible and if yes how?", "a": ["In most cases, if you wish to change your brand, you will first need to resign, serve a cooling‑off period, and then go through the entire recruitment process again (including interviews/assessments).", "Additionally, we will need to obtain HR clearance from your previous employer."], "links": []}, {"category": "A) APPLICATION PROCESS", "q": "How/When to fill in the EIF form?", "a": ["You can fill in the EIF (Employment Information Form) after you have been selected and you have e‑signed your Offer Letter.", "You will receive an EIF notification on your screen as soon as you log in to CruiseCareers. Follow the instructions to complete the EIF."], "links": []}, {"category": "A) APPLICATION PROCESS", "q": "I received an Offer letter but was not part of any interview with Carnival brands or CSSI. Is this legitimate?", "a": ["Most likely this will be a fake job offer letter.", "If you are unsure about the authenticity of an offer letter, use this link and submit your details. Our team will respond within 48 hours."], "links": [{"label": "Report / verify suspected job scam", "url": "https://bit.ly/stopjobscam"}]}, {"category": "A) APPLICATION PROCESS", "q": "My application status shows “Shortlisted,” but I haven’t received any response. What does this mean?", "a": ["This could mean that we presently do not have any vacancies for this position and have placed you in our Talent Pool.", "As soon as a position is available, we will get in touch with you.", "Alternatively, it could mean we were unable to contact you for an interview date. Please ensure your contact details in your profile are current and updated."], "links": []}, {"category": "A) APPLICATION PROCESS", "q": "Can I drop in for a Walk‑in Interview at CSSI?", "a": ["At present all our interviews are by appointment only. There are no walk‑in interviews being conducted.", "If you have applied for a position, complete the assigned assessments and ensure that your profile is at least 80% complete.", "Our team will review your application, and if found suitable, you will be invited to our office for an interview."], "links": []}, {"category": "A) APPLICATION PROCESS", "q": "I could not turn up for an interview on the assigned date and time. Can I reschedule?", "a": ["If possible, we will reschedule your interview for the next available date.", "However, we request you to let us know beforehand if you are unable to make it for the interview."], "links": []}, {"category": "A) APPLICATION PROCESS", "q": "I received an SMS regarding my shortlisting for a job, but I have still not received any mail as mentioned in the message.", "a": ["Check your email spam / junk folder for any communication."], "links": []}, {"category": "A) APPLICATION PROCESS", "q": "What are the stages from recruitment to the onboarding process?", "a": ["Once you are selected for an onboard position, you will receive an Offer Letter via Cruisecareers.in that you will need to e‑sign within 48 hours. Steps to complete:", ["Log in to Cruisecareers.in and navigate to My Tasks.", "Open and e‑sign your Offer Letter and Job Description.", "Complete and submit the EIF Form.", "Continue monitoring My Tasks for further instructions."], "After submitting the EIF, your employee number will be generated. You must then complete PEME, background verification, employer reference check, STCW 2010 courses, Indian CDC, SID, and Visa, as outlined in your Conditional Offer Letter within the prescribed time frame.", "Upon completion of all required formalities, you will be contacted by our Onboarding team once a joining date has been identified for you."], "links": []}, {"category": "A) APPLICATION PROCESS", "q": "I applied for a position, and my profile is also more than 80% complete. But I haven’t received any message regarding my application.", "a": ["Our recruiters will contact you when vacancies match your profile.", "If shortlisted, you will receive an email invitation for a personal interview."], "links": []}, {"category": "A) APPLICATION PROCESS", "q": "I have signed the Offer letter, Job description, and completed the EIF. What happens next?", "a": ["The CSSI team will generate your employee ID within 7 days. Next steps include:", ["Completing background and employer reference checks via our third‑party verification agency called ATTESTR (respond promptly to their emails).", "Completing your medical assessment within 7 days using the PEME link in your offer letter.", "Enrolling in STCW 2010 courses if not already done. Use only DG Shipping certified Marine Training Institutes.", "Monitoring My Tasks on your Dashboard for new assignments."]], "links": [{"label": "DG Shipping certified MTIs", "url": "https://bit.ly/DGMTI"}]}, {"category": "A) APPLICATION PROCESS", "q": "What does “Pending Brand Approval” mean in my application status?", "a": ["This means your application is still under review or has been forwarded to operations for further interviews or assessment.", "Please keep checking your email and dashboard for updates."], "links": []}, {"category": "A) APPLICATION PROCESS", "q": "I am unable to perform my self‑assessment (not received / page not responding / unable to scroll down).", "a": ["If you have not received the assessments, it could mean that there are no assessments ready for the position you have applied for. No action is required currently.", "Additionally, close all browser windows, clear cache and cookies, then re‑login."], "links": []}, {"category": "A) APPLICATION PROCESS", "q": "I have not received any mail regarding my English Language test. How/Where can I find the same?", "a": ["Check your email spam / junk folder for any communication."], "links": []}, {"category": "A) APPLICATION PROCESS", "q": "I cannot upload my passport copy; it shows a duplicate passport copy error. What does this mean?", "a": ["This means that you have already registered for an account previously with the same passport.", "If you have forgotten your password, reset it using the Forgot Password option on the homepage."], "links": []}, {"category": "A) APPLICATION PROCESS", "q": "I have login issues — Forgot my Username & Password / Change my Email ID & Phone number associated with my account.", "a": ["If you’ve forgotten your password, go to Cruisecareers.in and click on Forgot Password to reset it.", "To update your contact details, log in to Cruisecareers.in, go to your dashboard, click on My Profile, and update your contact information."], "links": []}, {"category": "A) APPLICATION PROCESS", "q": "I am unable to complete 100% of my profile information on CruiseCareers.", "a": ["To ensure 100% completion of your profile, ensure all required fields are filled and all mandatory documents are uploaded."], "links": []}, {"category": "A) APPLICATION PROCESS", "q": "When/How can I get my Employee ID?", "a": ["Your employee ID will be generated after completing the EIF form and e‑signing both your offer letter and job description.", "Once generated, this employee ID will be emailed to you and will also be visible in your Cruisecareers.in profile."], "links": []}, {"category": "B) CHARGES & FEES", "q": "Are there any charges to apply for a job or recruitment process with CSSI?", "a": ["All CSSI recruitment services are completely free of charge.", "There are no charges at any stage of the recruitment process."], "links": []}, {"category": "C) JOINING A SHIP", "q": "I have an issue regarding my flight tickets (not received / cancelled etc).", "a": ["Please email your brand Logistics Coordinator / Compliance Team (specific to your selected brand/company) with your query.", "Don’t forget to mention your name, Emp ID, name of ship and joining date."], "links": []}, {"category": "C) JOINING A SHIP", "q": "Can I reschedule / cancel / postpone / bring forward my joining date?", "a": ["This is highly unlikely.", "Requests for postponement depend upon the reason.", "Please email your brand Logistics Coordinator / Compliance Team with your query, the reason, and any supporting documentation."], "links": []}, {"category": "C) JOINING A SHIP", "q": "My ship joining date got cancelled due to operational reasons. What next?", "a": ["If your joining date has been cancelled, our onboarding team will contact you with further details as and when available."], "links": []}, {"category": "C) JOINING A SHIP", "q": "What is career progression or promotion policy? Can I apply for a promotion?", "a": ["Promotions are solely based on onboard performance appraisal.", "These are handled by the shoreside operations department overseas (not CSSI).", "You cannot ‘apply’ for a promotion — your performance in your contract should speak for itself."], "links": []}, {"category": "C) JOINING A SHIP", "q": "I have a joining date. When will I get all my joining documents like contract and flight tickets?", "a": ["You will receive your contract (Seafarers Employment Agreement) up to 30 days in advance — you should sign and send it back within 3 days.", "All other documents such as your flight tickets etc. will follow."], "links": []}, {"category": "C) JOINING A SHIP", "q": "I have all documents ready and am waiting for my joining date. What should I do?", "a": ["We encourage you to continue to work with your current organization till you hear from the onboarding team about your confirmed joining date."], "links": []}, {"category": "D) REHIRE PROCESS", "q": "I was previously employed onboard a Carnival brand ship. I now wish to rejoin. What documents are needed for the rehire?", "a": ["If you were previously employed with a Carnival brand and wish to rejoin after a career break, click the link and fill in your details.", "Our Employee Relations team will check your details and reply.", "Please note you cannot apply for rehire if your exit from the company was on disciplinary grounds or breaking contract."], "links": [{"label": "Rehire support", "url": "https://bit.ly/ersupport"}]}, {"category": "E) PRE‑EMPLOYMENT MEDICAL TEST (PEME)", "q": "I was unable to complete my Pre‑Employment Medical Examination (PEME) within the prescribed time period. How can I reschedule it?", "a": ["If you wish to reschedule your PEME appointment, please speak to our Medical Team on 079425 29292 and select Medical from the IVR Menu."], "links": [{"label": "Call Medical Team", "url": "tel:+917942529292"}]}, {"category": "E) PRE‑EMPLOYMENT MEDICAL TEST (PEME)", "q": "Where can I find PEME centers?", "a": ["Medical centers are listed via a link in your offer letter.", "You can complete your PEME at a center closest to your residence."], "links": []}, {"category": "F) TRAINING", "q": "I have been selected for Costa Cruises. When will my training at the Culinary Academy of India (CAI) Hyderabad begin? Where and how can I find the details?", "a": ["You will receive an email from our training coordinator if your brand/rank requires this training."], "links": []}, {"category": "F) TRAINING", "q": "Are STCW courses compulsory?", "a": ["Yes. Basic STCW courses, also called Basic Safety Training (BST), are compulsory for all cruise ship crew for all brands.", "The below basic STCW courses should be completed at a DG Shipping recognized institute:", ["Personal Survival Techniques (PST)", "Fire Prevention & Fire Fighting (FPFF)", "Elementary First Aid (EFA)", "Personal Safety & Social Responsibilities (PSSR)"], "If applicable (depending on the brand), these courses may also be required:", ["Designated Security Duties (DSD)", "Passenger Ship Familiarization (PSF)"], "Please note: the costs of these courses will be borne by you and are not reimbursed."], "links": []}, {"category": "G) VISA PROCESS", "q": "How do I know which visa to apply for and when?", "a": ["Once you receive your employee ID, the CSSI Visa team will contact you and provide information on how you can apply for a visa with detailed user guides."], "links": []}, {"category": "G) VISA PROCESS", "q": "Is US Visa compulsory to join?", "a": ["Yes. A valid US C1D visa is required to join our ships based in North America such as Princess Cruises, Holland America Line, Seabourn and Cunard Line.", "Depending upon the itinerary, a US C1D visa may also be required to join a P&O Cruises ship.", "If you fail to obtain a US C1D visa for any reason, your candidature will be cancelled.", "Regretfully, we can provide you with only one chance to apply for a US C1/D visa."], "links": []}, {"category": "H) CSSI CONTACT DETAILS", "q": "How can I contact CSSI for recruitment or application queries?", "a": ["Have queries related to recruitment or the application process? Join our webinar held Monday to Friday (working days only) from 3:30pm to 4:30pm and speak to our recruitment experts directly.", ["Click to join: https://bit.ly/CRINwebinar", "Mobile joining guide: https://bit.ly/WebinarGeneric"], "Carnival Support Services India Pvt. Ltd, Kohinoor City, Tower 2, Floor 5, Kirol Road, Off LBS Marg, Kurla West, Mumbai 400070.", "Open: Mon–Fri, 09:30am to 05:30pm", "Website: www.cruisecareers.in", "Email: hellocssi@carnivalssi.com"], "links": [{"label": "Join webinar", "url": "https://bit.ly/CRINwebinar"}, {"label": "Webinar mobile guide", "url": "https://bit.ly/WebinarGeneric"}, {"label": "CruiseCareers website", "url": "https://www.cruisecareers.in"}, {"label": "Email CSSI", "url": "mailto:hellocssi@carnivalssi.com"}]}];
+
+  const slugify = (s) => s.toLowerCase().replace(/&/g,"and").replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"").slice(0,90);
+  const el = (tag, attrs={}, children=[]) => {
+    const node = document.createElement(tag);
+    for (const [k,v] of Object.entries(attrs)) {
+      if (k === "class") node.className = v;
+      else if (k === "html") node.innerHTML = v;
+      else if (k.startsWith("on") && typeof v === "function") node.addEventListener(k.slice(2), v);
+      else node.setAttribute(k, v);
+    }
+    for (const c of children) node.appendChild(typeof c === "string" ? document.createTextNode(c) : c);
+    return node;
+  };
+  const unique = (arr) => Array.from(new Set(arr));
+
+  const state = { query:"", categoriesOn: new Set() };
+  const cats = unique(FAQS.map(x => x.category)).sort((a,b)=>a.localeCompare(b));
+  const countTotal = document.getElementById("countTotal");
+  const countShown = document.getElementById("countShown");
+  const chipBar = document.getElementById("chipBar");
+  const faqRoot = document.getElementById("faqRoot");
+  const staticRoot = document.getElementById("faqRootStatic");
+  const searchInput = document.getElementById("searchInput");
+  countTotal.textContent = String(FAQS.length);
+
+  function buildChips(){
+    chipBar.innerHTML = "";
+    chipBar.appendChild(el("button",{class:"chip",type:"button","aria-pressed": state.categoriesOn.size===0?"true":"false",
+      onclick:()=>{ state.categoriesOn.clear(); syncChips(); render(); }},["All"]));
+    for (const c of cats){
+      chipBar.appendChild(el("button",{class:"chip",type:"button","aria-pressed": state.categoriesOn.has(c)?"true":"false",
+        onclick:()=>{ state.categoriesOn.has(c)?state.categoriesOn.delete(c):state.categoriesOn.add(c); syncChips(); render(); }},[c]));
+    }
+  }
+  function syncChips(){
+    chipBar.querySelectorAll(".chip").forEach(btn=>{
+      const label = btn.textContent.trim();
+      if (label==="All") btn.setAttribute("aria-pressed", state.categoriesOn.size===0 ? "true":"false");
+      else btn.setAttribute("aria-pressed", state.categoriesOn.has(label) ? "true":"false");
+    });
+  }
+  function matches(faq){
+    if (state.categoriesOn.size>0 && !state.categoriesOn.has(faq.category)) return false;
+    const q = (state.query||"").trim().toLowerCase();
+    if (!q) return true;
+    const flatA = (faq.a||[]).flatMap(x=>Array.isArray(x)?x:[x]);
+    const flatL = (faq.links||[]).flatMap(l=>[l.label,l.url]);
+    const hay = [faq.category, faq.q, ...flatA, ...flatL].join(" ").toLowerCase();
+    const tokens = q.split(/\s+/).filter(Boolean);
+    return tokens.every(t => hay.includes(t));
+  }
+
+  function render(){
+    if (staticRoot) staticRoot.style.display = "none";
+    faqRoot.style.display = "grid";
+    faqRoot.innerHTML = "";
+    const results = FAQS.filter(matches);
+    countShown.textContent = String(results.length);
+
+    if (!results.length){
+      faqRoot.appendChild(el("div",{class:"empty"},["No matches. Try different keywords (e.g., EIF, PEME, STCW, US visa)."]));
+      return;
+    }
+
+    const byCat = new Map();
+    for (const item of results){
+      if (!byCat.has(item.category)) byCat.set(item.category,[]);
+      byCat.get(item.category).push(item);
+    }
+
+    for (const [cat, items] of Array.from(byCat.entries()).sort((a,b)=>a[0].localeCompare(b[0]))) {
+      const card = el("section",{class:"card","data-cat":cat});
+      const head = el("div",{class:"cardHead"},[
+        el("div",{},[ el("div",{class:"cat"},[cat]), el("h2",{class:"cardTitle"},[cat]) ])
+      ]);
+      const body = el("div",{class:"cardBody"});
+
+      for (const faq of items){
+        const id = `${slugify(cat)}-${slugify(faq.q)}`;
+        const details = el("details",{"data-qid":id});
+        const summary = el("summary",{tabindex:"0"},[
+          el("div",{class:"q",id},[faq.q]),
+          el("div",{class:"chev","aria-hidden":"true"})
+        ]);
+
+        const answer = el("div",{class:"a"});
+        for (const part of (faq.a||[])){
+          if (Array.isArray(part)){
+            const ul = el("ul");
+            for (const li of part) ul.appendChild(el("li",{},[li]));
+            answer.appendChild(ul);
+          } else {
+            answer.appendChild(el("p",{style:"margin:0 0 8px"},[part]));
+          }
+        }
+
+        const tools = el("div",{class:"tools"},[
+          el("a",{href:`#${id}`,title:"Deep link"},["# Link"]),
+          el("a",{href:"#",title:"Copy deep link", onclick:(e)=>{
+            e.preventDefault();
+            const url = `${location.origin}${location.pathname}#${id}`;
+            (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject())
+              .then(()=>{ e.target.textContent="Copied!"; setTimeout(()=>e.target.textContent="Copy link",900); })
+              .catch(()=>prompt("Copy this link:", url));
+          }},["Copy link"])
+        ]);
+
+        if (faq.links && faq.links.length){
+          for (const l of faq.links){
+            const attrs = { href:l.url, title:l.url };
+            if (String(l.url).startsWith("http")){ attrs.target="_blank"; attrs.rel="noopener noreferrer"; }
+            tools.appendChild(el("a", attrs, [l.label]));
+          }
+        }
+
+        details.appendChild(summary);
+        details.appendChild(answer);
+        details.appendChild(tools);
+        body.appendChild(details);
+      }
+
+      card.appendChild(head);
+      card.appendChild(body);
+      faqRoot.appendChild(card);
+    }
+
+    openFromHash();
+  }
+
+  function openFromHash(){
+    const hash = decodeURIComponent(location.hash||"").replace(/^#/,"");
+    if (!hash) return;
+    const target = faqRoot.querySelector(`details[data-qid="${CSS.escape(hash)}"]`);
+    if (target){
+      target.open = true;
+      setTimeout(()=>{
+        const s = target.querySelector("summary");
+        if (s){ s.scrollIntoView({behavior:"smooth", block:"center"}); s.focus(); }
+      },50);
+    }
+  }
+
+  document.getElementById("expandAllBtn").addEventListener("click",()=>{
+    const root = (faqRoot.style.display==="none") ? staticRoot : faqRoot;
+    root.querySelectorAll("details").forEach(d=>d.open=true);
+  });
+  document.getElementById("collapseAllBtn").addEventListener("click",()=>{
+    const root = (faqRoot.style.display==="none") ? staticRoot : faqRoot;
+    root.querySelectorAll("details").forEach(d=>d.open=false);
+  });
+  document.getElementById("resetBtn").addEventListener("click",()=>{
+    state.query=""; state.categoriesOn.clear(); searchInput.value="";
+    buildChips(); render();
+    history.replaceState(null,"",location.pathname);
+    searchInput.focus();
+  });
+  searchInput.addEventListener("input",(e)=>{ state.query=e.target.value||""; render(); });
+  window.addEventListener("keydown",(e)=>{ if (e.key==="/" && document.activeElement!==searchInput){ e.preventDefault(); searchInput.focus(); } });
+  window.addEventListener("hashchange", openFromHash);
+
+  buildChips();
+  render();
+</script>
+</body>
+</html>
